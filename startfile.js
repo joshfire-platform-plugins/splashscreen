@@ -1,7 +1,7 @@
 define([], function () {
   return function(runtime, params, callback) {
 
-    if (!params.deploy.isCordova) {
+    if (!params.deploy.flags.cordova) {
 
       if (params.options["web-mode"]!="none") {
 
