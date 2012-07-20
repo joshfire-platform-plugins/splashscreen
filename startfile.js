@@ -1,6 +1,6 @@
 define([], function () {
   return function(runtime, params, callback) {
-  
+
     if (!params.deploy.isCordova) {
 
       if (params.options["web-mode"]!="none") {
@@ -28,6 +28,6 @@ define([], function () {
 
     }
 
-    callback(null, params.content);
+    callback();
   };
 });
