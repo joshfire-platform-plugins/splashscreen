@@ -1,0 +1,60 @@
+{
+  "name": "splashscreen",
+  "fullName": "Splashscreen addon",
+  "version": "0.0.1",
+  "keywords": [
+    "splash",
+    "splashscreen"
+  ],
+  "description": "Set custom splashscreens for your app",
+  "joshfire": {
+    "images": {},
+    "hooks": [
+      "startfile",
+      "xcodeproj",
+      "loaded"
+    ],
+    "options": {
+      "schema": {
+        "ios-phone-portrait": {
+          "type": "object",
+          "title": "iPhone/iPod portrait",
+          "description": "Recommended size is <b>640x960</b>. Non-retina devices will use a scaled-down version"
+        },
+        "ios-ipad-portrait": {
+          "type": "object",
+          "title": "iPad portrait",
+          "description": "Recommended size is <b>1536x2048</b>. Non-retina devices will use a scaled-down version"
+        },
+        "ios-ipad-landscape": {
+          "type": "object",
+          "title": "iPad landscape",
+          "description": "Recommended size is <b>2048x1536</b>. Non-retina devices will use a scaled-down version"
+        },
+        "web-mode": {
+          "type":"string",
+          "title":"Splashscreen type for web apps",
+          "enum":["none","text"],
+          "default":"none"
+        }
+      },
+      "form":[
+        {
+          "key":"ios-phone-portrait",
+          "type":"file-hosted-public"
+        },
+        {
+          "key":"ios-ipad-portrait",
+          "type":"file-hosted-public"
+        },
+        {
+          "key":"ios-ipad-landscape",
+          "type":"file-hosted-public"
+        },
+        {
+          "key":"web-mode"
+        }
+      ]
+    }
+  }
+}
