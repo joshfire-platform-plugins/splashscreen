@@ -34,7 +34,7 @@
         "web-mode": {
           "type":"string",
           "title":"Splashscreen type for web apps",
-          "enum":["none","text"],
+          "enum":["none","text","spinner"],
           "default":"none"
         }
       },
