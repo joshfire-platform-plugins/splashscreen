@@ -11,8 +11,7 @@
     "images": {},
     "hooks": [
       "startfile",
-      "xcodeproj",
-      "loaded"
+      "xcodeproj"
     ],
     "options": {
       "schema": {
