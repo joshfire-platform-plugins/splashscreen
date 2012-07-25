@@ -14,7 +14,7 @@
     },
     "hooks": [
       "startfile",
-      "xcodeproj",
+      "subdeploypackage",
       "androidproj",
       "loaded"
     ],

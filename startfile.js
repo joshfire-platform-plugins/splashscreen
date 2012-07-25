@@ -5,7 +5,7 @@ define([], function () {
 
       if (params.options["web-mode"]!="none") {
 
-        var splash;
+        var splash = "";
 
         if (params.options["web-mode"]=="spinner") {
         
@@ -56,6 +56,9 @@ define([], function () {
           "</style>";
 
           params.content = runtime.headAppend(params.content,css);
+
+          //Disable web splashscreen if we're in standalone mode
+          splash = "<script type='text/javascript'>if (('standalone' in window.navigator) && window.navigator.standalone) document.write('<style>._joshfire_factory_splashscreen{display:none;}</style>');</script>";
 
           splash += "<div class='_joshfire_factory_splashscreen'><div class='_joshfire_factory_splashscreen_icon'></div><div class='_joshfire_factory_splashscreen_spinner'></div><div class='_joshfire_factory_splashscreen_factory'></div></div>";
 
