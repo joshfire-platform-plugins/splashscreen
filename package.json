@@ -8,10 +8,14 @@
   ],
   "description": "Set custom splashscreens for your app",
   "joshfire": {
-    "images": {},
+    "images": {
+      "small": "marketing/image-small.png",
+      "big":"marketing/image-small.png"
+    },
     "hooks": [
       "startfile",
       "xcodeproj",
+      "androidproj",
       "loaded"
     ],
     "options": {
@@ -31,6 +35,16 @@
           "title": "iPad landscape",
           "description": "Recommended size is <b>2048x1536</b>. Non-retina devices will use a scaled-down version"
         },
+        "android-portrait": {
+          "type": "object",
+          "title": "Android portrait",
+          "description": "Size of at least <b>960x720</b>."
+        },
+        "android-landscape": {
+          "type": "object",
+          "title": "Android landscape",
+          "description": "Size of at least <b>720x960</b>."
+        },
         "web-mode": {
           "type":"string",
           "title":"Splashscreen type for web apps",
@@ -49,6 +63,14 @@
         },
         {
           "key":"ios-ipad-landscape",
+          "type":"file-hosted-public"
+        },
+        {
+          "key":"android-portrait",
+          "type":"file-hosted-public"
+        },
+        {
+          "key":"android-landscape",
           "type":"file-hosted-public"
         },
         {
