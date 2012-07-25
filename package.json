@@ -8,7 +8,10 @@
   ],
   "description": "Set custom splashscreens for your app",
   "joshfire": {
-    "images": {},
+    "images": {
+      "small": "marketing/image-small.png",
+      "big":"marketing/image-small.png"
+    },
     "hooks": [
       "startfile",
       "xcodeproj",
