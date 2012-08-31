@@ -78,8 +78,9 @@ define([], function () {
 
           params.content = runtime.headAppend(params.content,css);
 
-          //Disable web splashscreen if we're in standalone mode
-          splash = "<script type='text/javascript'>if (('standalone' in window.navigator) && window.navigator.standalone) document.write('<style>._joshfire_factory_splashscreen{display:none;}</style>');</script>";
+          // Disable web splashscreen if we're in standalone mode
+          // Not anymore https://www.pivotaltracker.com/story/show/34205347
+          // splash = "<script type='text/javascript'>if (('standalone' in window.navigator) && window.navigator.standalone) document.write('<style>._joshfire_factory_splashscreen{display:none;}</style>');</script>";
 
           if (params.config.app.integration=="dailymotion") {
             splash += "<div class='_joshfire_factory_splashscreen'><div class='_joshfire_factory_splashscreen_and'>&amp;</div><div class='_joshfire_factory_splashscreen_icon'></div><div class='_joshfire_factory_splashscreen_spinner'></div><div class='_joshfire_factory_splashscreen_factory'></div></div>";
