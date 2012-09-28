@@ -28,6 +28,19 @@ define([], function () {
         });
       },
       function(cb) {
+        if (!hasDevice("phone")) return cb();
+        if (!params.options["ios-phone-4inch-portrait"]) return cb();
+
+        base = basedir+"_base."+params.options["ios-phone-4inch-portrait"].ext;
+        runtime.copy(params.options["ios-phone-4inch-portrait"].url,base,function(err) {
+
+          runtime.imagemagick("convert",base+" -resize 640x1136! "+basedir+"splash-ios-640-1136.png",function(err) {
+            runtime.deleteFile(base,cb);
+          });
+          
+        });
+      },
+      function(cb) {
         if (!hasDevice("tablet")) return cb();
         if (!params.options["ios-ipad-portrait"]) return cb();
 

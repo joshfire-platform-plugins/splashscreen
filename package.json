@@ -1,7 +1,7 @@
 {
   "name": "splashscreen",
   "fullName": "Splashscreen",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "splash",
     "splashscreen"
@@ -24,6 +24,11 @@
           "type": "object",
           "title": "iPhone/iPod portrait",
           "description": "Recommended size is <b>640x960</b>. Non-retina devices will use a scaled-down version"
+        },
+        "ios-phone-4inch-portrait": {
+          "type": "object",
+          "title": "iPhone 5 portrait (4 inch retina)",
+          "description": "Recommended size is <b>640x1136</b>."
         },
         "ios-ipad-portrait": {
           "type": "object",
@@ -55,6 +60,10 @@
       "form":[
         {
           "key":"ios-phone-portrait",
+          "type":"file-hosted-public"
+        },
+        {
+          "key":"ios-phone-4inch-portrait",
           "type":"file-hosted-public"
         },
         {
