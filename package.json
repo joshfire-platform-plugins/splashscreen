@@ -6,7 +6,7 @@
     "splash",
     "splashscreen"
   ],
-  "description": "Set custom splashscreens for your app",
+  "description": "Displays a custom splash screen while your application loads in the background.",
   "joshfire": {
     "images": {
       "small": "marketing/image-small.png",
