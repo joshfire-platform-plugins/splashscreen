@@ -1,7 +1,11 @@
+/*global console*/
 define([], function () {
-  return function(runtime, params, callback) {
+  return function (runtime, params, callback) {
+    console.log('add-on', 'splashscreen', 'androidproj started');
 
     var base;
+    var devices = params.params['deployconf']['params']['devices'];
+    console.log('add-on', 'splashscreen', 'devices', devices);
 
     /**
      * Returns true if deploy configuration targets at least one
@@ -9,7 +13,6 @@ define([], function () {
      */
     var hasDeviceFamily = function (deviceFamily) {
       var device = null;
-      var devices = params.params['deployconf']['params']['devices'];
       for (device in devices) {
         if ((device === '*') ||
           (device.indexOf(deviceFamily + '-') === 0)) {
@@ -18,37 +21,58 @@ define([], function () {
       }
       return false;
     };
-    
+
     runtime.async.series([
-      function(cb) {
+      function (cb) {
         if (!hasDeviceFamily('phone')) return cb();
         if (!params.options["android-portrait"]) return cb();
 
         base = "res/_base."+params.options["android-portrait"].ext;
+        console.log('add-on', 'splashscreen', 'android-portrait', base);
+
         runtime.copy(params.options["android-portrait"].url, base, function (err) {
+          if (err) return cb(err);
           runtime.imagemagick('convert',
-            base + ' -resize 720x960! res/drawable/splash.png',
+            base + ' -resize 720x960^' +
+            ' -gravity center -extent 720x960' +
+            ' res/drawable/splash.png',
             function (err) {
-              runtime.deleteFile(base,cb);
+              if (err) return cb(err);
+              runtime.deleteFile(base, cb);
             }
           );
         });
       },
-      function(cb) {
+
+      function (cb) {
         if (!hasDeviceFamily('tablet')) return cb();
         if (!params.options['android-landscape']) return cb();
 
         base = 'res/_base.' + params.options['android-landscape'].ext;
+        console.log('add-on', 'splashscreen', 'android-landscape', base);
+
         runtime.copy(params.options['android-landscape'].url, base, function (err) {
+          if (err) return cb(err);
           runtime.imagemagick('convert',
-            base + ' -resize 960x720! res/drawable-land/splash.png',
+            base + ' -resize 960x720^' +
+            ' -gravity center -extent 960x720' +
+            ' res/drawable-land/splash.png',
             function (err) {
-              runtime.deleteFile(base,cb);
+              if (err) return cb(err);
+              runtime.deleteFile(base, cb);
             }
           );
         });
       }
-    ],callback);
+    ], function (err) {
+      if (err) {
+        console.error('add-on', 'splashscreen', 'androidproj error', err);
+      }
+      else {
+        console.log('add-on', 'splashscreen', 'androidproj done');
+      }
+      return callback(err);
+    });
 
   };
 });
