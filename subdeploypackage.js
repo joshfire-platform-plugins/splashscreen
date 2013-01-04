@@ -3,16 +3,27 @@ define([], function () {
 
     var base;
 
-    //TODO sub-device support
-    var hasDevice = function(device) {
-      return (params.params["deployconf"]["params"]["devices"].indexOf(device)>=0 || params.params["deployconf"]["params"]["devices"].indexOf("*")>=0 );
+    /**
+     * Returns true if deploy configuration targets at least one
+     * device that belongs to the given device family
+     */
+    var hasDeviceFamily = function (deviceFamily) {
+      var device = null;
+      var devices = params.params['deployconf']['params']['devices'];
+      for (device in devices) {
+        if ((device === '*') ||
+          (device.indexOf(deviceFamily + '-') === 0)) {
+          return true;
+        }
+      }
+      return false;
     };
 
     var basedir = params.documentroot+"/joshfirefactory_splashscreens/";
 
     runtime.async.series([
       function(cb) {
-        if (!hasDevice("phone")) return cb();
+        if (!hasDeviceFamily("phone")) return cb();
         if (!params.options["ios-phone-portrait"]) return cb();
 
         base = basedir+"_base."+params.options["ios-phone-portrait"].ext;
@@ -28,7 +39,7 @@ define([], function () {
         });
       },
       function(cb) {
-        if (!hasDevice("phone")) return cb();
+        if (!hasDeviceFamily("phone")) return cb();
         if (!params.options["ios-phone-4inch-portrait"]) return cb();
 
         base = basedir+"_base."+params.options["ios-phone-4inch-portrait"].ext;
@@ -41,7 +52,7 @@ define([], function () {
         });
       },
       function(cb) {
-        if (!hasDevice("tablet")) return cb();
+        if (!hasDeviceFamily("tablet")) return cb();
         if (!params.options["ios-ipad-portrait"]) return cb();
 
         base = basedir+"_base."+params.options["ios-ipad-portrait"].ext;
@@ -57,7 +68,7 @@ define([], function () {
         });
       },
       function(cb) {
-        if (!hasDevice("tablet")) return cb();
+        if (!hasDeviceFamily("tablet")) return cb();
         if (!params.options["ios-ipad-landscape"]) return cb();
 
         base = basedir+"_base."+params.options["ios-ipad-landscape"].ext;
