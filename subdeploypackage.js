@@ -16,9 +16,13 @@ define([], function () {
       for (device in devices) {
         if ((device === '*') ||
           (device.indexOf(deviceFamily + '-') === 0)) {
+          console.log('add-on', 'splashscreen', 'hasDeviceFamily',
+            deviceFamily, 'true');
           return true;
         }
       }
+      console.log('add-on', 'splashscreen', 'hasDeviceFamily',
+        deviceFamily, 'false');
       return false;
     };
 

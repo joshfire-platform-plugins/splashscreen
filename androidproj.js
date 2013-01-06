@@ -16,14 +16,19 @@ define([], function () {
       for (device in devices) {
         if ((device === '*') ||
           (device.indexOf(deviceFamily + '-') === 0)) {
+          console.log('add-on', 'splashscreen', 'hasDeviceFamily',
+            deviceFamily, 'true');
           return true;
         }
       }
+      console.log('add-on', 'splashscreen', 'hasDeviceFamily',
+        deviceFamily, 'false');
       return false;
     };
 
     runtime.async.series([
       function (cb) {
+        console.log('add-on', 'splashscreen', 'android-portrait', 'start');
         if (!hasDeviceFamily('phone')) return cb();
         if (!params.options["android-portrait"]) return cb();
 
@@ -45,6 +50,7 @@ define([], function () {
       },
 
       function (cb) {
+        console.log('add-on', 'splashscreen', 'android-landscape', 'start');
         if (!hasDeviceFamily('tablet')) return cb();
         if (!params.options['android-landscape']) return cb();
 
