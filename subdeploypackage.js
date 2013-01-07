@@ -49,7 +49,7 @@ define([], function () {
                 runtime.imagemagick('convert',
                   base + ' -resize 320x480^' +
                   ' -gravity center -extent 320x480' +
-                  basedir + 'splash-ios-320-480.png',
+                  ' ' + basedir + 'splash-ios-320-480.png',
                   function (err) {
                     if (err) return cb(err);
                     runtime.deleteFile(base, cb);
@@ -106,7 +106,7 @@ define([], function () {
                 runtime.imagemagick('convert',
                   base + ' -resize 768x1024^' +
                   ' -gravity center -extent 768x1024' +
-                  basedir + 'splash-ios-768-1024.png',
+                  ' ' + basedir + 'splash-ios-768-1024.png',
                   function (err) {
                     if (err) return cb(err);
                     runtime.deleteFile(base,cb);
@@ -137,7 +137,7 @@ define([], function () {
                 runtime.imagemagick('convert',
                   base + ' -resize 1024x768^' +
                   ' -gravity center -extent 1024x768' +
-                  basedir + 'splash-ios-1024-768.png',
+                  ' ' + basedir + 'splash-ios-1024-768.png',
                   function (err) {
                     if (err) return cb(err);
                     runtime.deleteFile(base,cb);
