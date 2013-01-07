@@ -131,7 +131,7 @@ define([], function () {
             runtime.imagemagick('convert',
               base + ' -resize 2048x1536^' +
               ' -gravity center -extent 2048x1536' +
-              basedir + 'splash-ios-2048-1536.png',
+              ' ' + basedir + 'splash-ios-2048-1536.png',
               function (err) {
                 if (err) return cb(err);
                 runtime.imagemagick('convert',
