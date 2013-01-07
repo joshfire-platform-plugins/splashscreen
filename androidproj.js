@@ -12,10 +12,10 @@ define([], function () {
      * device that belongs to the given device family
      */
     var hasDeviceFamily = function (deviceFamily) {
-      var device = null;
-      for (device in devices) {
-        if ((device === '*') ||
-          (device.indexOf(deviceFamily + '-') === 0)) {
+      var i = 0;
+      for (i = 0; i < devices.length; i++) {
+        if ((devices[i] === '*') ||
+          (devices[i].indexOf(deviceFamily + '-') === 0)) {
           console.log('add-on', 'splashscreen', 'hasDeviceFamily',
             deviceFamily, 'true');
           return true;
