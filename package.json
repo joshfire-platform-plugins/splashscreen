@@ -59,6 +59,10 @@
       },
       "form":[
         {
+          "type": "help",
+          "helpvalue": "<div class='alert'>Warning: You should only upload the splashscreen of the <strong>current device</strong>.</div>"
+        },
+        {
           "key":"ios-phone-portrait",
           "type":"file-hosted-public"
         },
