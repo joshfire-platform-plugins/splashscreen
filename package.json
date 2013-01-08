@@ -1,7 +1,7 @@
 {
   "name": "splashscreen",
   "fullName": "Splashscreen",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "keywords": [
     "splash",
     "splashscreen"
@@ -43,12 +43,12 @@
         "android-portrait": {
           "type": "object",
           "title": "Android portrait",
-          "description": "Size of at least <b>960x720</b>."
+          "description": "Size of at least <b>720x960</b>."
         },
         "android-landscape": {
           "type": "object",
           "title": "Android landscape",
-          "description": "Size of at least <b>720x960</b>."
+          "description": "Size of at least <b>960x720</b>."
         },
         "web-mode": {
           "type":"string",
