@@ -31,6 +31,54 @@ define([], function () {
     runtime.async.series([
       function (cb) {
         if (!hasDeviceFamily('phone')) return cb();
+        if (!params.options['blackberry-landscape']) return cb();
+
+        base = basedir + '_base.' + params.options['blackberry-landscape'].ext;
+        console.log('add-on', 'splashscreen', 'blackberry-landscape', base);
+
+        runtime.copy(params.options['blackberry-landscape'].url, base,
+          function (err) {
+            if (err) return cb(err);
+
+            runtime.imagemagick('convert',
+              base + ' -resize 1280x768^' +
+              ' -gravity center -extent 1280x768' +
+              ' ' + basedir + 'splash-blackberry-1280-768.png',
+              function (err) {
+                if (err) return cb(err);
+                runtime.deleteFile(base, cb);
+              }
+            );
+          }
+        );
+      },
+
+      function (cb) {
+        if (!hasDeviceFamily('phone')) return cb();
+        if (!params.options['blackberry-portrait']) return cb();
+
+        base = basedir + '_base.' + params.options['blackberry-portrait'].ext;
+        console.log('add-on', 'splashscreen', 'blackberry-portrait', base);
+
+        runtime.copy(params.options['blackberry-portrait'].url, base,
+          function (err) {
+            if (err) return cb(err);
+
+            runtime.imagemagick('convert',
+              base + ' -resize 768x1280^' +
+              ' -gravity center -extent 768x1280' +
+              ' ' + basedir + 'splash-blackberry-768-1280.png',
+              function (err) {
+                if (err) return cb(err);
+                runtime.deleteFile(base, cb);
+              }
+            );
+          }
+        );
+      },
+
+      function (cb) {
+        if (!hasDeviceFamily('phone')) return cb();
         if (!params.options['ios-phone-portrait']) return cb();
 
         base = basedir + '_base.' + params.options['ios-phone-portrait'].ext;
