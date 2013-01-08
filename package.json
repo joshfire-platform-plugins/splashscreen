@@ -50,6 +50,16 @@
           "title": "Android landscape",
           "description": "Size of at least <b>960x720</b>."
         },
+        "blackberry-portrait": {
+          "type": "object",
+          "title": "Blackberry 10 portrait",
+          "description": "Recommended size is <b>768x1280</b>."
+        },
+        "blackberry-landscape": {
+          "type": "object",
+          "title": "Blackberry 10 landscape",
+          "description": "Recommended size is <b>1280x768</b>."
+        },
         "web-mode": {
           "type":"string",
           "title":"Splashscreen type for web apps",
@@ -84,6 +94,14 @@
         },
         {
           "key":"android-landscape",
+          "type":"file-hosted-public"
+        },
+        {
+          "key":"blackberry-portrait",
+          "type":"file-hosted-public"
+        },
+        {
+          "key":"blackberry-landscape",
           "type":"file-hosted-public"
         },
         {
