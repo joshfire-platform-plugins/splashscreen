@@ -1,4 +1,3 @@
-/*jshint white: true*/
 {
   "name": "splashscreen",
   "fullName": "Splashscreen",
@@ -64,8 +63,13 @@
         "web-mode": {
           "type": "string",
           "title": "Splashscreen type for web apps",
-          "enum": ["factory", "spinner", "none", "text"],
+          "enum": ["factory", "spinner", "none", "text", "custom"],
           "default": "factory"
+        },
+        "web-mode-splashscreen": {
+          "type": "object",
+          "title": "Custom image",
+          "description": "Recommended size is <b>1280x768</b>"
         }
       },
       "form": [
@@ -106,7 +110,24 @@
           "type": "file-hosted-public"
         },
         {
-          "key": "web-mode"
+          "type": "selectfieldset",
+          "title": "Splashscreen type for web apps",
+          "key": "web-mode",
+          "titleMap": {
+            "factory" : "Factory",
+            "spinner" : "Spinner",
+            "none"    : "None",
+            "text"    : "Text",
+            "custom"  : "Custom"
+          },
+          "items": [
+            {}, {}, {}, {},
+            {
+              "key"    : "web-mode-splashscreen",
+              "type"   : "file-hosted-public",
+              "title"  : "Web app"
+            }
+          ]
         }
       ]
     }
