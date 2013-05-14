@@ -121,7 +121,22 @@
             "custom"  : "Custom"
           },
           "items": [
-            {}, {}, {}, {},
+            {
+              "type": "section",
+              "items": []
+            },
+            {
+              "type": "section",
+              "items": []
+            },
+            {
+              "type": "section",
+              "items": []
+            },
+            {
+              "type": "section",
+              "items": []
+            },
             {
               "key"    : "web-mode-splashscreen",
               "type"   : "file-hosted-public",
