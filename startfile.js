@@ -90,7 +90,7 @@ define([], function () {
 
       } else if (webMode === 'custom') {
         var imgObject = params.options['web-mode-splashscreen'];
-        var imgURL = imgObject ? imgObject.contentURL : null;
+        var imgURL = imgObject ? imgObject.url : null;
 
         if (imgURL) {
           css = '<style type=\'text/css\'>' +
