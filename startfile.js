@@ -93,9 +93,15 @@ define([], function () {
         var imgURL = imgObject ? imgObject.url : null;
 
         if (imgURL) {
+          splash = '<div class=\'_joshfire_factory_splashscreen\'>&nbsp;</div>';
           css = '<style type=\'text/css\'>' +
-
-            '#splashscreen {' +
+            '._joshfire_factory_splashscreen {' +
+              'height: 100%;' +
+              'width : 100%;' +
+              'position: absolute;' +
+              'top: 0;' +
+              'left: 0;' +
+              'z-index: 100000;' +
               'background-image: url(' + imgURL + ');' +
               'background-size: cover;' +
             '}';
