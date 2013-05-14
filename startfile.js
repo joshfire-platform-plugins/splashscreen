@@ -7,6 +7,7 @@ define([], function () {
         webMode !== 'none') {
 
       var splash = '';
+      var css = '';
 
       if (webMode === 'spinner') {
 
@@ -22,7 +23,7 @@ define([], function () {
 
         // cat path/to/file.png | openssl base64 | tr -d '\n' | pbcopy
 
-        var css = "<style type='text/css'>" +
+        css = "<style type='text/css'>" +
 
           "._joshfire_factory_splashscreen {height:100%;width:100%;top:0;left:0;position:absolute;z-index:100000;background: #5A5B5F;opacity:1;" +
             "-webkit-transition: opacity .5s linear;" +
@@ -85,6 +86,23 @@ define([], function () {
           splash += "<div class='_joshfire_factory_splashscreen'><div class='_joshfire_factory_splashscreen_and'>&amp;</div><div class='_joshfire_factory_splashscreen_icon'></div><div class='_joshfire_factory_splashscreen_spinner'></div><div class='_joshfire_factory_splashscreen_factory'></div></div>";
         } else {
           splash += "<div class='_joshfire_factory_splashscreen'><div class='_joshfire_factory_splashscreen_icon'></div><div class='_joshfire_factory_splashscreen_spinner'></div><div class='_joshfire_factory_splashscreen_factory'></div></div>";
+        }
+
+      } else if (webMode === 'custom') {
+        var imgObject = params.options['web-mode-splashscreen'];
+        var imgURL = imgObject ? imgObject.contentURL : null;
+
+        if (imgURL) {
+          css = '<style type=\'text/css\'>' +
+
+            '._joshfire_factory_splashscreen {' +
+              'background-image: url(' + imgURL + ');' +
+              'background-size: cover;' +
+            '}';
+
+          css += '</style>';
+
+          params.content = runtime.headAppend(params.content, css);
         }
 
       }
