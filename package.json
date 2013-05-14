@@ -1,3 +1,4 @@
+/*jshint white: true*/
 {
   "name": "splashscreen",
   "fullName": "Splashscreen",
@@ -61,51 +62,51 @@
           "description": "Recommended size is <b>1280x768</b>."
         },
         "web-mode": {
-          "type":"string",
-          "title":"Splashscreen type for web apps",
-          "enum":["factory","spinner","none","text"],
-          "default":"factory"
+          "type": "string",
+          "title": "Splashscreen type for web apps",
+          "enum": ["factory", "spinner", "none", "text"],
+          "default": "factory"
         }
       },
-      "form":[
+      "form": [
         {
           "type": "help",
           "helpvalue": "<div class='alert'>Warning: You should only upload the splashscreen of the <strong>current device</strong>.</div>"
         },
         {
-          "key":"ios-phone-portrait",
-          "type":"file-hosted-public"
+          "key": "ios-phone-portrait",
+          "type": "file-hosted-public"
         },
         {
-          "key":"ios-phone-4inch-portrait",
-          "type":"file-hosted-public"
+          "key": "ios-phone-4inch-portrait",
+          "type": "file-hosted-public"
         },
         {
-          "key":"ios-ipad-portrait",
-          "type":"file-hosted-public"
+          "key": "ios-ipad-portrait",
+          "type": "file-hosted-public"
         },
         {
-          "key":"ios-ipad-landscape",
-          "type":"file-hosted-public"
+          "key": "ios-ipad-landscape",
+          "type": "file-hosted-public"
         },
         {
-          "key":"android-portrait",
-          "type":"file-hosted-public"
+          "key": "android-portrait",
+          "type": "file-hosted-public"
         },
         {
-          "key":"android-landscape",
-          "type":"file-hosted-public"
+          "key": "android-landscape",
+          "type": "file-hosted-public"
         },
         {
-          "key":"blackberry-portrait",
-          "type":"file-hosted-public"
+          "key": "blackberry-portrait",
+          "type": "file-hosted-public"
         },
         {
-          "key":"blackberry-landscape",
-          "type":"file-hosted-public"
+          "key": "blackberry-landscape",
+          "type": "file-hosted-public"
         },
         {
-          "key":"web-mode"
+          "key": "web-mode"
         }
       ]
     }
