@@ -95,7 +95,7 @@ define([], function () {
         if (imgURL) {
           css = '<style type=\'text/css\'>' +
 
-            '._joshfire_factory_splashscreen {' +
+            '#splashscreen {' +
               'background-image: url(' + imgURL + ');' +
               'background-size: cover;' +
             '}';
