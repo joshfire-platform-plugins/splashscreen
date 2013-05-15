@@ -102,8 +102,10 @@ define([], function () {
               'top: 0;' +
               'left: 0;' +
               'z-index: 100000;' +
+              'background-color: #000;' +
               'background-image: url(' + imgURL + ');' +
-              'background-size: cover;' +
+              'background-repeat: no-repeat;' +
+              'background-position: center center;' +
             '}';
 
           css += '</style>';
