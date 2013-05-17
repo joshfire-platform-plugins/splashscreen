@@ -44,7 +44,7 @@ define([], function () {
             'left: 0;' +
             'z-index: 100000;' +
             'background-color: #000;' +
-          '"' +
+          '">' +
           textDiv +
         '</div>';
 
