@@ -1,7 +1,7 @@
 {
   "name": "splashscreen",
   "fullName": "Splashscreen",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "keywords": [
     "splash",
     "splashscreen"
@@ -70,6 +70,12 @@
           "type": "object",
           "title": "Custom image",
           "description": "Recommended size is <b>1280x768</b>"
+        },
+        "web-mode-text": {
+          "type": "string",
+          "title": "Custom text",
+          "default": "Loading...",
+          "description": "Text to appear as a splashscreen"
         }
       },
       "form": [
@@ -133,10 +139,7 @@
               "type": "section",
               "items": []
             },
-            {
-              "type": "section",
-              "items": []
-            },
+            "web-mode-text",
             {
               "key"    : "web-mode-image",
               "type"   : "file-hosted-public",

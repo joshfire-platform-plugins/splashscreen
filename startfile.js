@@ -17,7 +17,36 @@ define([], function () {
 
       } else if (webMode === 'text') {
 
-        splash = "<div class='_joshfire_factory_splashscreen' style='height:100%;width:100%;top:0;left:0;position:absolute;z-index:100000;background: #000;'><div style='z-index:100000;color:#FFF;background:#000;position:absolute;top:50%;width:100%;text-align:center;font-family:Arial,Helvetica,sans-serif;'>Loading...</div></div>";
+        var text = params.options['web-mode-text'];
+        // defaults to 'loading...'
+        text = text ? text : 'Loading...';
+
+        var textDiv = '<div ' +
+          'style = "' +
+            'position: absolute;' +
+            'z-index: 100000;' +
+            'width: 100%;' +
+            'top: 50%;' +
+            'background: #000;' +
+            'text-align: center;' +
+            'color: #FFF;' +
+            'font-family: Arial, Helvetica, sans-serif;' +
+          '">' +
+          text +
+        '</div>';
+
+        splash = '<div class="joshfire_factory_splashscreen" ' +
+          'style = "' +
+            'position: absolute;' +
+            'height: 100%;' +
+            'width : 100%;' +
+            'top: 0;' +
+            'left: 0;' +
+            'z-index: 100000;' +
+            'background-color: #000;' +
+          '"' +
+          textDiv +
+        '</div>';
 
       } else if (webMode === 'factory') {
 
