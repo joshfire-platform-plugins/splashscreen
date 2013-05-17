@@ -89,7 +89,7 @@ define([], function () {
         }
 
       } else if (webMode === 'custom') {
-        var imgObject = params.options['web-mode-splashscreen'];
+        var imgObject = params.options['web-mode-image'];
         var imgURL = imgObject ? imgObject.url : null;
 
         if (imgURL) {

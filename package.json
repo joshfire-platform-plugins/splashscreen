@@ -66,7 +66,7 @@
           "enum": ["factory", "spinner", "none", "text", "custom"],
           "default": "factory"
         },
-        "web-mode-splashscreen": {
+        "web-mode-image": {
           "type": "object",
           "title": "Custom image",
           "description": "Recommended size is <b>1280x768</b>"
@@ -138,7 +138,7 @@
               "items": []
             },
             {
-              "key"    : "web-mode-splashscreen",
+              "key"    : "web-mode-image",
               "type"   : "file-hosted-public",
               "title"  : "Web app"
             }
