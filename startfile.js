@@ -35,7 +35,7 @@ define([], function () {
           text +
         '</div>';
 
-        splash = '<div class="joshfire_factory_splashscreen" ' +
+        splash = '<div class="_joshfire_factory_splashscreen" ' +
           'style = "' +
             'position: absolute;' +
             'height: 100%;' +
