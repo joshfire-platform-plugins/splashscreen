@@ -12,6 +12,16 @@
       "small": "marketing/image-small.png",
       "big":"marketing/image-small.png"
     },
+    "devices": [
+      "phone-ios",
+      "phone-android",
+      "phone-web",
+      "phone-blackberry",
+      "tablet-ios",
+      "tablet-android",
+      "tablet-web",
+      "desktop-web"
+    ],
     "hooks": [
       "startfile",
       "subdeploypackage",
