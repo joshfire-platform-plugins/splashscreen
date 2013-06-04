@@ -34,25 +34,49 @@
           "type": "object",
           "title": "iPhone/iPod portrait",
           "description": "Recommended size is <b>640x960</b>. Non-retina devices will use a scaled-down version",
-          "joshfire:definedFor": ["phone-ios"]
+          "joshfire:definedFor": [
+            "phone-ios",
+            "desktop-web",
+            "phone-web",
+            "tablet-web",
+            "tv-web"
+          ]
         },
         "ios-phone-4inch-portrait": {
           "type": "object",
           "title": "iPhone 5 portrait (4 inch retina)",
           "description": "Recommended size is <b>640x1136</b>.",
-          "joshfire:definedFor": ["phone-ios"]
+          "joshfire:definedFor": [
+            "phone-ios",
+            "desktop-web",
+            "phone-web",
+            "tablet-web",
+            "tv-web"
+          ]
         },
         "ios-ipad-portrait": {
           "type": "object",
           "title": "iPad portrait",
           "description": "Recommended size is <b>1536x2048</b>. Non-retina devices will use a scaled-down version",
-          "joshfire:definedFor": ["tablet-ios"]
+          "joshfire:definedFor": [
+            "tablet-ios",
+            "desktop-web",
+            "phone-web",
+            "tablet-web",
+            "tv-web"
+          ]
         },
         "ios-ipad-landscape": {
           "type": "object",
           "title": "iPad landscape",
           "description": "Recommended size is <b>2048x1536</b>. Non-retina devices will use a scaled-down version",
-          "joshfire:definedFor": ["tablet-ios"]
+          "joshfire:definedFor": [
+            "tablet-ios",
+            "desktop-web",
+            "phone-web",
+            "tablet-web",
+            "tv-web"
+          ]
         },
         "android-portrait": {
           "type": "object",
