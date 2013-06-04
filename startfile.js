@@ -135,6 +135,11 @@ define([], function () {
               'background-image: url(' + imgURL + ');' +
               'background-repeat: no-repeat;' +
               'background-position: center center;' +
+              'opacity: 1;' +
+              '-webkit-transition: opacity .5s linear;' +
+              '-moz-transition: opacity .5s linear;' +
+              '-o-transition: opacity .5s linear;' +
+              'transition: opacity .5s linear;' +
             '}';
 
           css += '</style>';
