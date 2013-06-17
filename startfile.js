@@ -1,7 +1,7 @@
 define([], function () {
   return function (runtime, params, callback) {
 
-    var webMode = params.options['web-mode'];
+    var webMode = params.options ? params.options['web-mode'] : 'none';
 
     if (!params.deploy.flags.cordova &&
         webMode !== 'none') {
